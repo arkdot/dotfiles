@@ -1,0 +1,32 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+command_timeout = 3000
+
+[aws]
+disabled = true
+
+[package]
+disabled = true
+
+[character]
+success_symbol = "[❯❯](bold green) "
+error_symbol = "[❯❯](bold red) "
+
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[hostname]
+disabled = false
+ssh_only = true
+format = "[$ssh_symbol](bold blue) on [$hostname](bold red) "
+
+[python]
+disabled = false
+
+[c]
+disabled = true
+

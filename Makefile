@@ -1,5 +1,7 @@
 .PHONY: home xdg_config
 
+all: home xdg_config
+
 home:
 	make -C home
 
