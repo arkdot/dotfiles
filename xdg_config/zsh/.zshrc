@@ -2,7 +2,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 # Setup autocompletion.
 autoload -U +X bashcompinit && bashcompinit
-autoload -U +X compinit && compinit
+autoload -U +X compinit && compinit -d ~/.cache/zsh/zcompdum-${ZSH_VERSION}
 
 # Ensures zsh cache is updated whenever PATH is modified.
 zstyle ":completion:*:commands" rehash 1
