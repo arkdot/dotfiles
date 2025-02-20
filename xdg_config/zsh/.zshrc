@@ -1,4 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
 
 export LANG=en_US.UTF8
 
@@ -7,7 +8,7 @@ export LANG=en_US.UTF8
 [[ -n "$ZSH_CUSTOM" ]] || ZSH_CUSTOM="$XDG_CONFIG_HOME/zsh/custom"
 
 # Sets ZSH_CACHE_DIR to the path where cache files should be created.
-[[ -n "$ZSH_CACHE_DIR" ]] || ZSH_CACHE_DIR="$HOME/.cache/zsh"
+[[ -n "$ZSH_CACHE_DIR" ]] || ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 
 # ===========================================================================
 # ZSH completion configuration
@@ -19,19 +20,15 @@ fpath=($ZSH_CACHE_DIR/completions $fpath)
 # Loads and configures completion system.
 autoload -U compaudit compinit zrecompile
 
-# Saves the location of the current completion dump file.
-if [[ -z "$ZSH_COMPDUMP" ]]; then
-    ZSH_COMPDUMP="$ZSH_CACHE_DIR/zcompdump-${ZSH_VERSION}"
+# Shamelessly borrowed from Prezto. Regenerates the completion cache approximately daily.
+_comp_files=($XDG_CACHE_HOME/zsh/zcompcache(Nm-20))
+if (( $#_comp_files )); then
+    compinit -i -C -d "$XDG_CACHE_HOME/zsh/zcompcache"
+else
+    compinit -i -d "$XDG_CACHE_HOME/zsh/zcompcache"
 fi
+unset _comp_files
 
-compinit -i -d $ZSH_COMPDUMP
-
-# zcompile the completion dump file
-if command mkdir "${ZSH_COMPDUMP}.lock" 2>/dev/null; then
-    zrecompile -q -p "${ZSH_COMPDUMP}"
-    command rm -rf "${ZSH_COMPDUMP}.zwc.old" "${ZSH_COMPDUMP}.lock"
-    zrecompile
-fi
 
 # Set completion colors to be the same as `ls`.
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
