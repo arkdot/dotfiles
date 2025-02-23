@@ -51,6 +51,9 @@ for config_file in $custom; do
 done
 unset config_file
 
+# Restores Ctrl/A and Ctrl/E to move to the beginning and end of the line.
+bindkey -e
+
 # Loads $HOME/.extra if it exists.
 [[ -e $HOME/.extra ]] && source $HOME/.extra
 
