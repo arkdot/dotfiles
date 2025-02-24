@@ -60,7 +60,7 @@ eval "$(starship init zsh)"
 
 
 # Initializes fzf.
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
