@@ -48,7 +48,7 @@ for config_file in $custom; do
 done
 unset config_file
 
-# Restores Ctrl/A and Ctrl/E to move to the beginning and end of the line.
+# Restores Ctrl/A and Ctrl/E to move to the beginning and end of the line (emacs key bindings).
 bindkey -e
 
 # Loads $HOME/.extra if it exists.

@@ -23,3 +23,8 @@ setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt share_history          # share command history data
+
+
+# Start typing + [Up-Arrow] - fuzzy find history forward
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
