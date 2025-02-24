@@ -1,9 +1,6 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
-export LANG=en_US.UTF8
-
-
 # Sets ZSH_CUSTOM to the path where my custom files and plugins are stored.
 [[ -n "$ZSH_CUSTOM" ]] || ZSH_CUSTOM="$XDG_CONFIG_HOME/zsh/custom"
 
