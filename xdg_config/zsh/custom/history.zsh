@@ -4,7 +4,7 @@
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # History file configuration
-[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+HISTFILE="$HOME/.zsh_history"
 HISTCONTROL=ignoredups:erasedups                   # no duplicate entries
 HISTSIZE=100000                                    # big big history (default is 500)
 HISTFILESIZE=$HISTSIZE                             # big big history
