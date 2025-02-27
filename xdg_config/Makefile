@@ -3,7 +3,7 @@
 XDG_CONFIG_HOME ?= $(HOME)/.config
 
 all: clean
-	stow -t $(XDG_CONFIG_HOME) --ignore Makefile -v .
+	stow -t $(XDG_CONFIG_HOME) --ignore Makefile .
 
 clean:
-	stow -t $(XDG_CONFIG_HOME) -v -D .
+	stow -t $(XDG_CONFIG_HOME) -D .

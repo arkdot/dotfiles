@@ -1,7 +1,7 @@
 .PHONY: all clean
 
 all: clean
-	stow -t $(HOME) --ignore Makefile -v .
+	stow -t $(HOME) --ignore Makefile .
 
 clean:
-	stow -t $(HOME) -v -D .
+	stow -t $(HOME) -D .
