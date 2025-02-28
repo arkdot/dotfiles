@@ -14,8 +14,6 @@ if type shopt &> /dev/null; then shopt -s histappend; fi  # append to history, d
 # The only downside with this is [up] on the readline will go over all history not just this bash session.
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
 
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
@@ -26,5 +24,11 @@ setopt share_history          # share command history data
 
 
 # Start typing + [Up-Arrow] - fuzzy find history forward
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
+
+alias history="fc -l 1"
+echo "History configuration loaded."
