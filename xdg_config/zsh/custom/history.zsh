@@ -31,4 +31,3 @@ autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
 
 alias history="fc -l 1"
-echo "History configuration loaded."
