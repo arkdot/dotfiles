@@ -23,10 +23,6 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt share_history          # share command history data
 
 
-# Start typing + [Up-Arrow] - fuzzy find history forward
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
-
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
 

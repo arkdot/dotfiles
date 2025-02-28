@@ -36,10 +36,6 @@ zstyle ":completion:*:commands" rehash 1
 
 # ===========================================================================
 
-# Key bindings in emacs mode.
-# Restores Ctrl/A and Ctrl/E to move to the beginning and end of the line.
-bindkey -e
-
 # My plugins.
 custom=(
     'aliases'
@@ -47,6 +43,7 @@ custom=(
     'history'
     'environment'
     'completion'
+    'key-bindings'
 )
 for config_file in $custom; do
     source "$ZSH_CUSTOM/$config_file.zsh"
