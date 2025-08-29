@@ -13,7 +13,7 @@ alias rle="readlink -e"
 alias my="sudo chown `id -u`:`id -g`"
 
 # ls aliases.
-alias ls="eza --color=always --group-directories-first"
+alias ls="eza --color=auto --group-directories-first"
 alias l1="ls -1"
 alias ll="ls --long -g --icons=always"
 alias l="ll"
