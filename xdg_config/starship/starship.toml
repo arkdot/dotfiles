@@ -1,32 +1,38 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# Inserts a blank line between shell prompts
 add_newline = true
-command_timeout = 3000
 
-[aws]
-disabled = true
+format = """
+$directory\
+${custom.giturl}\
+$git_branch\
+$git_state\
+$git_status\
+$line_break\
+$character
+"""
 
-[package]
-disabled = true
+[git_status]
+format = "[($staged$modified$untracked$deleted$stashed$conflicted$ahead_behind)]($style)"
+staged   = "[+$count](yellow) "
+modified = "[!$count](yellow) "
+deleted  = "[-$count](red) "
+untracked= "[?$count](green) "
+stashed  = "[*$count](magenta) "
+conflicted = "[!$count](bold red) "
+ahead = " [⇡${count}](bold magenta)"
+behind = " [⇣${count}](bold magenta)"
+diverged = " [⇡${ahead_count}⇣${behind_count}](bold magenta)"
 
-[character]
-success_symbol = "[❯❯](bold green) "
-error_symbol = "[❯❯](bold red) "
+style = "cyan"
+
+[git_branch]
+format = "[$branch](bold blue) "
 
 [directory]
-truncation_length = 8
-truncation_symbol = "…/"
+truncation_length = 0
 truncate_to_repo = false
-
-[hostname]
-disabled = false
-ssh_only = true
-format = "[$ssh_symbol](bold blue) on [$hostname](bold red) "
-
-[python]
-disabled = false
-
-[c]
-disabled = true
-
+read_only = " 󰌾"
+style = "bold purple"
