@@ -13,9 +13,14 @@ alias rle="readlink -e"
 alias my="sudo chown `id -u`:`id -g`"
 
 # ls aliases.
-alias ls="eza --color=auto --group-directories-first"
+if has_program "eza"; then
+    alias ls="eza --color=auto --group-directories-first"
+    alias ll="ls --long -g --icons=always"
+else
+    alias ls="ls --color=auto --group-directories-first"
+    alias ll="ls -lh"
+fi
 alias l1="ls -1"
-alias ll="ls --long -g --icons=always"
 alias l="ll"
 alias la="ll -a"
 

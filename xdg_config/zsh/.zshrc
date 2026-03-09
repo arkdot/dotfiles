@@ -37,8 +37,8 @@ zstyle ":completion:*:commands" rehash 1
 
 # My plugins.
 custom=(
-    'aliases'
     'functions'
+    'aliases'
     'history'
     'environment'
     'completion'
