@@ -21,7 +21,7 @@ if has_program "starship"; then
     export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
     eval "$(starship init zsh)"
 else
-    export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]\u\[$(tput setaf 6)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 2)\]\w\[$(tput setaf 1)\]\[$(tput sgr0)\]\n\[$(tput setaf 2)\]>\[$(tput sgr0)\]"
+    export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]\u\[$(tput setaf 6)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 2)\]\w\[$(tput setaf 1)\]\[$(tput sgr0)\]\n\[$(tput setaf 2)\]>\[$(tput sgr0)\] "
 fi
 
 # Initializes fzf.
