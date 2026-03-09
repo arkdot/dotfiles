@@ -35,7 +35,8 @@ else
         export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]\u\[$(tput setaf 6)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 2)\]\w\[$(tput setaf 1)\]\[$(tput sgr0)\]\n\[$(tput setaf 2)\]>\[$(tput sgr0)\]"
     else
         autoload -U colors && colors
-        PS1="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{green}%~%f%F{red}%#%f\n%F{green}>%f "
+        PS1="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{green}%~%f
+%F{green}>%f "
     fi
 fi
 
