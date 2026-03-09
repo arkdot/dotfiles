@@ -7,7 +7,7 @@ common_custom=(
 )
 
 # Loop style compliant for both bash and zsh
-for item in "${common_custom[@]}"; do
+for config_file in "${common_custom[@]}"; do
     source "$COMMON_SHELL_CUSTOM/$config_file.sh"
 done
 unset common_custom
