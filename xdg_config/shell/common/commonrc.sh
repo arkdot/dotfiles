@@ -7,7 +7,6 @@ common_custom=(
 )
 
 for config_file in $common_custom; do
-    echo "sourcing $COMMON_SHELL_CUSTOM/$config_file.sh"
     source "$COMMON_SHELL_CUSTOM/$config_file.sh"
 done
 unset common_custom

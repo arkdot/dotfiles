@@ -1,5 +1,3 @@
-alias s='source $ZDOTDIR/.zshrc && echo "Sourced zshrc"'
-
 # cd aliases.
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"

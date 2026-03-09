@@ -27,13 +27,9 @@ if has_program "starship"; then
     export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
     eval "$(starship init zsh)"
 else
-    if [ -n "$BASH_VERSION" ]; then
-        export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]\u\[$(tput setaf 6)\]@\[$(tput setaf 5)\]\h \[$(tput setaf 2)\]\w\[$(tput setaf 1)\]\[$(tput sgr0)\]\n\[$(tput setaf 2)\]>\[$(tput sgr0)\]"
-    else
-        autoload -U colors && colors
-        PS1="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{green}%~%f
+    autoload -U colors && colors
+    PS1="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{green}%~%f
 %F{green}>%f "
-    fi
 fi
 
 # Initializes fzf.
@@ -45,3 +41,5 @@ fi
 if has_program "zoxide"; then
     eval "$(zoxide init zsh)"
 fi
+
+alias s='source $ZDOTDIR/.zshrc && echo "Sourced zshrc"'
