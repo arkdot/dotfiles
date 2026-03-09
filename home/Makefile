@@ -1,7 +1,9 @@
 .PHONY: all clean
 
+STOW ?= PERL_BADLANG=0 stow
+
 all: clean
-	stow -t $(HOME) --ignore Makefile .
+	$(STOW) -t $(HOME) --ignore Makefile .
 
 clean:
-	stow -t $(HOME) -D .
+	$(STOW) -t $(HOME) -D .

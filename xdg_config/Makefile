@@ -1,9 +1,10 @@
 .PHONY: all clean
 
+STOW ?= PERL_BADLANG=0 stow
 XDG_CONFIG_HOME ?= $(HOME)/.config
 
 all: clean
-	stow -t $(XDG_CONFIG_HOME) --ignore Makefile .
+	$(STOW) -t $(XDG_CONFIG_HOME) --ignore Makefile .
 
 clean:
-	stow -t $(XDG_CONFIG_HOME) -D .
+	$(STOW) -t $(XDG_CONFIG_HOME) -D .
