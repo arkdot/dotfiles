@@ -7,33 +7,6 @@ export XDG_CACHE_HOME=$HOME/.cache
 # Sets ZSH_CACHE_DIR to the path where cache files should be created.
 [[ -n "$ZSH_CACHE_DIR" ]] || ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 
-# ===========================================================================
-# ZSH completion configuration
-
-# Creates cache and completion directories and add to $fpath.
-mkdir -p $ZSH_CACHE_DIR/completions
-fpath=($ZSH_CACHE_DIR/completions $fpath)
-
-# Loads and configures completion system.
-autoload -U compaudit compinit zrecompile
-
-# Shamelessly borrowed from Prezto. Regenerates the completion cache approximately daily.
-_comp_files=($XDG_CACHE_HOME/zsh/zcompcache(Nm-20))
-if (( $#_comp_files )); then
-    compinit -i -C -d "$XDG_CACHE_HOME/zsh/zcompcache"
-else
-    compinit -i -d "$XDG_CACHE_HOME/zsh/zcompcache"
-fi
-unset _comp_files
-
-
-# Set completion colors to be the same as `ls`.
-[[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
-# Ensures zsh cache is updated whenever PATH is modified.
-zstyle ":completion:*:commands" rehash 1
-
-# ===========================================================================
 
 # My plugins.
 custom=(
