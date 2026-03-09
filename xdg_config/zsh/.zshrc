@@ -11,9 +11,7 @@ source $XDG_CONFIG_HOME/shell/common/commonrc.sh
 
 # My plugins.
 custom=(
-    'aliases'
     'history'
-    'environment'
     'completion'
     'key-bindings'
 )
@@ -23,9 +21,6 @@ done
 unset custom
 unset config_file
 
-
-# Loads $HOME/.extra if it exists.
-[[ -e $HOME/.extra ]] && source $HOME/.extra
 
 # Initializes starship prompt.
 if has_program "starship"; then
