@@ -25,7 +25,7 @@ if [[ "Darwin" =~ `uname -s` ]]; then
     alias hidedt="defaults write com.apple.finder CreateDesktop false; killall Finder"
     alias showdt="defaults write com.apple.finder CreateDesktop true; killall Finder"
     alias umount="diskutil eject"
-else
+#else
     # Linux specific aliases.
 fi
 
