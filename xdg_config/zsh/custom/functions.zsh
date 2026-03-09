@@ -61,3 +61,6 @@ mkdate() {
     mkdir ${thedate}_$1
 }
 
+has_program () {
+    return $(hash $1 2>/dev/null)
+}

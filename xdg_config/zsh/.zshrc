@@ -54,12 +54,18 @@ unset config_file
 [[ -e $HOME/.extra ]] && source $HOME/.extra
 
 # Initializes starship prompt.
-export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
-eval "$(starship init zsh)"
+if has_program "starship"; then
+    export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
+    eval "$(starship init zsh)"
+fi
 
 
 # Initializes fzf.
-source <(fzf --zsh)
+if has_program "fzf"; then
+    source <(fzf --zsh)
+fi
 
 # Initializes zoxide (cd replacement).
-eval "$(zoxide init zsh)"
+if has_program "zoxide"; then
+    eval "$(zoxide init zsh)"
+fi
