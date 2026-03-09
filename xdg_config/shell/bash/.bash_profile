@@ -2,7 +2,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
 # Sets BASH_CUSTOM to the path where my custom files and plugins are stored.
-[[ -n "$BASH_CUSTOM" ]] || ZSH_CUSTOM="$XDG_CONFIG_HOME/shell/bash/custom"
+[[ -n "$BASH_CUSTOM" ]] || BASH_CUSTOM="$XDG_CONFIG_HOME/shell/bash/custom"
 
 source $XDG_CONFIG_HOME/shell/common/commonrc.sh
 
