@@ -21,3 +21,7 @@ if has_program "fzf"; then
     export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
     export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 fi
+
+# I <3 Rust
+export PATH=$HOME/.cargo/bin:$PATH
+

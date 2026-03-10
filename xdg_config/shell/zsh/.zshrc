@@ -1,8 +1,7 @@
-export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
 # Sets ZSH_CUSTOM to the path where my custom files and plugins are stored.
-[[ -n "$ZSH_CUSTOM" ]] || ZSH_CUSTOM="$XDG_CONFIG_HOME/zsh/custom"
+[[ -n "$ZSH_CUSTOM" ]] || ZSH_CUSTOM="$ZDOTDIR/custom"
 
 # Sets ZSH_CACHE_DIR to the path where cache files should be created.
 [[ -n "$ZSH_CACHE_DIR" ]] || ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
@@ -17,6 +16,7 @@ custom=(
 )
 for config_file in $custom; do
     source "$ZSH_CUSTOM/$config_file.zsh"
+ 
 done
 unset custom
 unset config_file
