@@ -11,7 +11,8 @@ $git_branch\
 $git_state\
 $git_status\
 $line_break\
-$username$hostname $character
+$username$hostname\
+$character
 """
 
 [git_status]
@@ -39,4 +40,4 @@ style = "bold purple"
 
 [hostname]
 ssh_only = true
-format = '[$ssh_symbol$hostname]($style)'
+format = '[$ssh_symbol$hostname]($style) '
