@@ -19,6 +19,7 @@ fi
 alias l="ll"
 alias l1="ls -1"
 alias la="ll -a"
+alias lla="ll -a"
 
 if [[ "Darwin" =~ `uname -s` ]]; then
     # OS X specific aliases.

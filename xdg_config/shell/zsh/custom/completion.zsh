@@ -5,6 +5,9 @@
 mkdir -p $ZSH_CACHE_DIR/completions
 fpath=($ZSH_CACHE_DIR/completions $fpath)
 
+# Stores zcompdump to cache dir instead of default ZDOTDIR.
+[ -z "$ZSH_COMPDUMP" ] && export ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump-$HOST"
+
 # Loads and configures completion system.
 autoload -U compaudit compinit zrecompile
 
@@ -103,3 +106,4 @@ fi
 
 # automatically load bash completion functions
 autoload -U +X bashcompinit && bashcompinit
+compinit -u -d "$ZSH_COMPDUMP"
