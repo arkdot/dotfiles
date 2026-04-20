@@ -78,8 +78,12 @@
         git push origin --delete "$@"; \
     }; f"
 
-    # Remove unreachable objects from local repo.
+    # Remove unreachable objects from local repo:
+    #   - git fetch --prune removes any remote-tracking references that no longer exist on the remote,
+    #   - git reflog expire marks unreachable references as "expired" and ready for removal,
+    #   - git gc --prune=now actually removes unreachable references
     cleanup = "!f() {\
+        git fetch --prune;\
         git reflog expire --expire-unreachable=now --all;\
         git gc --prune=now;\
     }; f"
