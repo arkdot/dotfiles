@@ -74,8 +74,14 @@
 
     # Remove local and remote branch.
     deletebranch = "!f() { \
-        git push origin --delete "$@"; \
         git branch -d "$@"; \
+        git push origin --delete "$@"; \
+    }; f"
+
+    # Remove unreachable objects from local repo.
+    cleanup = "!f() {\
+        git reflog expire --expire-unreachable=now --all;\
+        git gc --prune=now;\
     }; f"
 
 
