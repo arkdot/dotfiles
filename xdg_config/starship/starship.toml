@@ -10,10 +10,14 @@ ${custom.giturl}\
 $git_branch\
 $git_state\
 $git_status\
+$git_commit\
 $line_break\
 $username$hostname\
 $character
 """
+
+[git_commit]
+tag_disabled = false
 
 [git_status]
 format = "[($staged$modified$untracked$deleted$stashed$conflicted$ahead_behind)]($style)"
