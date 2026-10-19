@@ -1,7 +1,15 @@
 # Arkdot Dotfiles
 
-## Installation
+## Local installation
 
-```bash
-curl -sL https://raw.githubusercontent.com/arkdot/dotfiles/master/install.sh | bash
+```
+git clone https://github.com/arkdot/dotfiles
+cd /path/to/dotfiles
+./install.py
+```
+
+## Installation from the github repo
+
+```
+curl -sL https://raw.githubusercontent.com/arkdot/dotfiles-next/refs/heads/main/bootstrap.sh | bash
 ```
