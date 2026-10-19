@@ -468,7 +468,7 @@ def symlink_dotfiles(root: Path, destination: Path, config: Config):
         # source_path is a file
         else:
             # Remove existing file / updates symbolic link
-            if dest_path.exists():
+            if dest_path.exists(follow_symlinks=False):
                 if dest_path.is_symlink():
                     if dest_path.resolve() != source_path.resolve():
                         confirm_update(
