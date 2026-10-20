@@ -1,3 +1,4 @@
+prepend_path $HOME/.fzf/bin
 
 if has_command "fzf"; then
     # Requires fd, bat, and eza to be installed
