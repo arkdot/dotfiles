@@ -1,4 +1,4 @@
-prepend_path $HOME/.fzf/bin
+prepend_path_if_exists $HOME/.fzf/bin
 
 if has_command "fzf"; then
     # Requires fd, bat, and eza to be installed
@@ -36,4 +36,7 @@ if has_command "fzf"; then
             esac
         }
     fi
+
+    [[ -v ZSH_VERSION ]] && source <(fzf --zsh)
+    [[ -v BASH_VERSION ]] && eval "$(fzf --bash)"
 fi
