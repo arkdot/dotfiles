@@ -12,6 +12,18 @@
     }
   },
   {
+    "name": "dust",
+    "install": {
+      "*": {
+        "strategy": "script",
+        "interpreter": "bash",
+        "script": [
+          "curl -sSfL https://raw.githubusercontent.com/bootandy/dust/refs/heads/master/install.sh | sh"
+        ]
+      }
+    }
+  },
+  {
     "name": "fzf",
     "install": {
       "*": {
