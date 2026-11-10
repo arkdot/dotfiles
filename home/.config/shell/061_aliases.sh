@@ -15,12 +15,13 @@ alias la="ll -a"
 alias lla="ll -a"
 
 # == du aliases ======================================================================
-if has_command "ncdu"; then
-    alias du="ncdu -x -r --exclude .git"
+if has_command "dust"; then
+    alias du="dust"
+    alias du1="du --depth=1"
 else
     alias du="du -h"
+    alias du1="du --max-depth=1"
 fi
-alias du1="\du -h --max-depth=1"
 
 
 alias grep="grep --color"

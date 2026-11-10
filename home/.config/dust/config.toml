@@ -1,0 +1,25 @@
+# Print tree biggest last
+reverse=false
+
+# Subdirectories will not have their path shortened
+display-full-paths=true
+
+# Use file length instead of blocks
+display-apparent-size=true
+
+# No colors will be printed
+no-colors=true
+
+# No percent bars or percentages will be displayed
+no-bars=true
+
+# Only count files and directories on the same filesystem as the supplied directory
+limit-filesystem=true
+
+# print sizes in powers of 1000 (e.g., 1.1G)
+output-format="si"
+
+number-of-lines=5   
+
+# To keep the .git directory collapsed
+collapse=[".git"]
