@@ -4,8 +4,8 @@ reverse=false
 # Subdirectories will not have their path shortened
 display-full-paths=true
 
-# Use file length instead of blocks
-display-apparent-size=true
+# True would count hard links several times
+display-apparent-size=false
 
 # No colors will be printed
 no-colors=true
